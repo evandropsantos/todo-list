@@ -1,0 +1,80 @@
+.td-task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  border-bottom: 1px solid map-get($colors, 'border');
+  box-shadow: 0px 1px 0px map-get($colors, 'white');
+  padding: 0.8rem;
+  transition: all .3s ease-in-out;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+
+  &:last-child {
+    border-bottom: none;
+    box-shadow: none;
+  }
+
+  &--done {
+    background-color: lighten(map-get($colors, 'success'), 40%);
+    text-decoration: line-through;
+    font-weight: map-get($fonts, 'regular');
+  }
+
+  &__buttons {
+    background-color: lighten(map-get($colors, 'text'), 40%);
+    border-left: 5px solid map-get($colors, 'text');
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    transition: all .5s ease-in-out;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  &:hover &__buttons {
+    transform: translate3d(0, 0, 0);
+  }
+
+  &--done &__name {
+    &:before {
+      background-image: url("../../assets/images/icon-check.svg");
+      background-color: map-get($colors, 'success');
+      background-size: 75%;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border-color: map-get($colors, 'success');
+    }
+  }
+
+  &__name {
+    $dimension: 20px;
+
+    font-size: px-rem(16);
+    color: map-get($colors, 'text');
+    display: flex;
+
+    &:before {
+      content: "";
+      width: $dimension;
+      height: $dimension;
+      border: 1px solid map-get($colors, 'text');
+      margin-right: .5rem;
+      border-radius: 100%;
+    }
+  }
+
+  &__date {
+    font-size: .7rem;
+    font-weight: map-get($fonts, 'regular');
+    padding: 3px 5px;
+    background-color: map-get($colors, 'destak');
+    color: map-get($colors, 'white');
+    border-radius: map-get($configs, 'radius');
+  }
+}

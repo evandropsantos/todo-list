@@ -1,0 +1,11 @@
+.td-box {
+  overflow: hidden;
+  border-radius: map-get($configs, 'radius');
+  background-color: map-get($colors, 'background');
+  box-shadow: 2px 2px 3px 0px #c5c2c2;
+  margin-bottom: 20px;
+
+  @media #{map-get($configs, 'mobile')} {
+    margin: 20px 0;
+  }
+}

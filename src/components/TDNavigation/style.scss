@@ -1,0 +1,54 @@
+.td-navigation {
+  width: 23%;
+  min-width: 250px;
+  height: map-get($configs, 'heightFull');
+  background: linear-gradient(to bottom, map-get($colors, 'destak'), darken(map-get($colors, 'destak'), 30%));
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__list {
+    width: 95%;
+    text-align: center;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    @media #{map-get($configs, 'mobile')} {
+      height: 25vh;
+    }
+  }
+
+  &__button--close {
+    display: none;
+
+    @media #{map-get($configs, 'mobile')} {
+      display: block;
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  @media #{map-get($configs, 'mobile')} {
+    width: 95%;
+    position: fixed;
+    z-index: 10;
+    transition: all .5s ease-in-out;
+    transform: translate3d(-200%, 0, 0);
+    opacity: 0;
+    
+    &_mobile--open {
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+  }
+}
+
+.logo {
+  width: 60%;
+  height: auto;
+  display: block;
+  margin: 5% 0;
+}

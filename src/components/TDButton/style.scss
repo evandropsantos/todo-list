@@ -1,0 +1,50 @@
+.button {
+  border-radius: map-get($configs, 'radius');
+  font-size: .9rem;
+  line-height: 2rem;
+  font-weight: map-get($fonts, 'regular');
+  letter-spacing: 1px;;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  color: map-get($colors, 'white');
+  padding: 0 15px;
+  margin: 0 3px;
+  outline: none;
+
+  &--new-task {
+    width: 90%;
+    line-height: 2.5rem;
+    display: block;
+    font-size: 1rem;
+    background-color: map-get($colors, 'success');
+
+    &:hover {
+      background-color: darken(map-get($colors, 'success'), 10%);
+    }
+  }
+
+  &--delete {
+    background-color: map-get($colors, 'error');
+
+    &:hover {
+      background-color: darken(map-get($colors, 'error'), 10%);
+    }
+  }
+
+  &--edit {
+    background-color: map-get($colors, 'destak');
+
+    &:hover {
+      background-color: darken(map-get($colors, 'destak'), 10%);
+    }
+  }
+
+  &--submit {
+    background-color: map-get($colors, 'success');
+
+    &:hover {
+      background-color: darken(map-get($colors, 'success'), 10%);
+    }
+  }
+}

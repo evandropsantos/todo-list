@@ -1,0 +1,47 @@
+@function px-rem ($num) {
+  @return #{($num / 16)}rem;
+}
+
+$colors: (
+  'background': #f1f1f1,
+  'white': #FFF,
+  'text': #444,
+  'success': #2ebcbc,
+  'error': #F55,
+  'destak': #3c3c3c,
+  'border': #d8d6d6
+);
+
+$fonts: (
+  'family': #{'Lato', sans-serif},
+  'bold': 700,
+  'medium': 400,
+  'regular': 300,
+);
+
+$configs: (
+  'radius': 5px,
+  'heightBox': 60vh,
+  'heightFull': 100vh,
+  'mobile':   '(max-width: 768px)',
+  'desktop':  'not all and (max-width: 768px)',
+);
+
+%hide-text {
+  text-indent: -9000em;
+  font-size: 0;
+}
+
+%input {
+  border: 1px solid map-get($colors, 'border');
+  border-radius: map-get($configs, 'radius');
+  line-height: 2.5rem;
+  padding: 0 3%;
+  font-size: 1rem;
+  outline: none;
+  color: map-get($colors, 'text');
+
+  &:focus {
+    border-color: map-get($colors, 'text');
+  }
+}

@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: map-get($configs, 'heightFull');
+}
+
+body {
+  font-family: map-get($fonts, 'family');
+  font-weight: map-get($fonts, 'medium');
+  background: map-get($colors, 'white');
+}
+
+#app {
+  display: flex;
+
+  @media #{map-get($configs, 'mobile')} {
+    flex-direction: column;
+  }
+}
+
+.container {
+  flex-grow: 2;
+  padding: 2em;
+
+  @media #{map-get($configs, 'mobile')} {
+    width: 100%;
+  }
+}
+
+.menu-mobile {
+  @media #{map-get($configs, 'desktop')} {
+    display: none;
+  }
+}

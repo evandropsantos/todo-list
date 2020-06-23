@@ -1,0 +1,54 @@
+.td-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+
+  &__overlay, &__window {
+    position: fixed;
+  }
+
+  &__overlay {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(map-get($colors, 'text'), .7);
+  }
+
+  &__window {
+    top: 50%;
+    left: 50%;
+    box-shadow: none;
+    transform: translate3d(-50%, -50%, 0);
+    width: 30%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 50px 20px 20px 20px;
+    z-index: 1;
+
+    @media #{map-get($configs, 'mobile')} {
+      width: 90%;
+    }
+  }
+
+  &__header {
+    background-color: map-get($colors, 'destak');
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__input {
+    @extend %input;
+    width: 100%;
+    margin-bottom: .8rem;
+  }
+
+  &__button{
+    width: 40%;
+  }
+}
